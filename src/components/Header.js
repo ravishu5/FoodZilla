@@ -1,12 +1,12 @@
 import { useState } from "react";
-import Logo from '../assets/img/foodzilla.jpg';
+import Logo from '../assets/img/e3797f623665fbd5863fb1f78e849f30.png';
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 
 const Title = () =>{
     return (
         <a href='/'>
-            <img className='logo' alt='foodzilla' src={Logo} />
+            <img className='h-20 px-10' alt='foodzilla' src={Logo} />
         </a>
     );
 };
@@ -17,10 +17,10 @@ const Header = () => {
     const isOnline = useOnline();
 
     return (
-        <div className='header'>
+        <div className="flex h-20 justify-between bg-green-100 shadow-lg">
             <Title/>
-            <div className='nav-items'>
-                <ul>
+            <div>
+                <ul className="py-7 flex space-x-4 mr-10">
                     <li>
                         <Link to="/">Home</Link>
                     </li>
@@ -33,9 +33,9 @@ const Header = () => {
                     <li>Cart</li>
                 </ul>
             </div>
-            <h1>{isOnline? '✅' : '🛑'}</h1>
+            <h1 className="mr-10 py-7">Status : {isOnline? '✅' : '🛑'}</h1>
             {
-                isLoggedIn? <button onClick={()=>setIsLoggedIn(false)}>Logout</button> : <button onClick={()=>setIsLoggedIn(true)}>Login</button>
+                isLoggedIn? <button className='mr-8' onClick={()=>setIsLoggedIn(false)}>Logout</button> : <button className='mr-8' onClick={()=>setIsLoggedIn(true)}>Login</button>
             }
         </div>
     );

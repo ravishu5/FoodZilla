@@ -34,17 +34,17 @@ const Body = () => {
     return (
     <>
         {/* search component  */}
-        <div className="search-container">
+        <div className="p-4 mx-6">
             
             <input 
                 type="text" 
-                className="search-input" 
+                className="border-2 border-gray-300 p-2 rounded-lg w-1/2 hover:border-green-500" 
                 placeholder="search" 
                 value={search} 
                 onChange={(e) => setSearch(e.target.value)} 
             />
             <button 
-                className="search-btn"
+                className='bg-green-500 hover:bg-sky-400 active:bg-red-400 text-white p-2 rounded-lg ml-2'
                 onClick={() => {
                     filterData();
                 }}
@@ -56,7 +56,7 @@ const Body = () => {
         {/* card component */}
 
         {(allRestaurants?.length === 0) ? <Shimmer/> : (filteredRestaurants?.length === 0)? <h1>No Restro Found</h1>
-        : (<div className='restaurant-list'>
+        : (<div className='p-4 flex flex-wrap'>
             {filteredRestaurants?.map((restaurant) => {return <RestaurantCard {...restaurant.info} key={restaurant.info.id}/>})}
         </div>)}
     </>

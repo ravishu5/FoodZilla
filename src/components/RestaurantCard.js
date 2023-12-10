@@ -3,8 +3,8 @@ import {Link} from 'react-router-dom';
 
 const RestaurantCard = ({name,cloudinaryImageId, cuisines, avgRating, id}) => {
     return (
-        <div className='card'>
-            <img src={IMG_CDN_URL + cloudinaryImageId }/>
+        <div className='w-[200px] mx-6 my-4'>
+            <img className='h-56 w-full rounded-lg ring-2 ring-green-100' src={IMG_CDN_URL + cloudinaryImageId }/>
             <Link to={`http://localhost:1234/restaurant/${id}`}>
             <h2>{name}</h2>
             </Link>
